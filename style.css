@@ -1,0 +1,273 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1b1b1b;
+  color: white;
+  min-height: 100vh;
+  font-family: "Nexa-Trial", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* --- Fonts ---*/
+
+h1 {
+  font-family: "Dream Orphans", sans-serif;
+  font-size: clamp(8rem, 20vw, 30rem);
+}
+
+h2 {
+  font-family: "Nexa-Trial Black", sans-serif;
+  font-size: clamp(3rem, 10vw, 15rem);
+}
+
+h3 {
+  font-size: clamp(2rem, 2vw, 4rem);
+  font-family: "Nexa-Trial Black", sans-serif;
+}
+
+.yellowText {
+  color: rgb(255, 211, 0);
+}
+
+/* --- Navigation bar ---*/
+
+.navbar {
+  top: 0;
+  transition: opacity 0.5s ease-out;
+  display: none;
+  opacity: 0;
+}
+
+.navbar-nav {
+  /* Centering the buttons */
+  position: relative;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar a {
+  margin: 0 8vw;
+}
+
+.navbar-toggler {
+  border: transparent;
+}
+
+.navbar-toggler-icon {
+  font-size: 0.8em;
+}
+
+/* --- Header --- */
+
+header {
+  position: relative;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+#headertext {
+  position: absolute;
+  width: min(80%, 992px);
+  min-height: 50vh;
+  margin-left: 10%;
+  margin-right: 10%;
+  top: 20%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+#headercaption {
+  position: absolute;
+  width: min(80%, 992px);
+  margin-left: 10%;
+  margin-right: 10%;
+  bottom: 3vw;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+#headercaption h3 {
+  font-size: clamp(0.8rem, 2vw, 4rem);
+}
+
+#surname {
+  line-height: 0;
+  margin-left: 13%;
+  opacity: 0.1;
+  font-size: clamp(8rem, 20vw, 30rem);
+}
+
+#headerimg {
+  position: absolute;
+  width: 40vh;
+  height: 50vh;
+  right: 25vw;
+  bottom: 0%;
+  z-index: 2;
+  background-image: url("./images/IMG_0397.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#headerScrollOne {
+  position: absolute;
+  width: 40vh;
+  height: 100vh;
+  right: 10vw;
+  z-index: 1;
+}
+
+#headerScrollOne::before,
+#headerScrollOne::after {
+  content: "";
+  position: absolute;
+  border: 3vh solid rgb(255, 211, 0);
+  height: 20vh;
+  width: 20vh;
+  top: -5%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-top: transparent;
+  border-left: transparent;
+  animation: scrollOne 1s ease-in-out infinite;
+}
+
+#headerScrollTwo {
+  position: absolute;
+  width: 40vh;
+  height: 100vh;
+  opacity: 0.1;
+  right: 10vw;
+  z-index: 1;
+  border-radius: 1%;
+  cursor: pointer;
+}
+
+#headerScrollTwo::before,
+#headerScrollTwo::after {
+  content: "";
+  position: absolute;
+  border: 3vh solid white;
+  height: 20vh;
+  width: 20vh;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-top: transparent;
+  border-left: transparent;
+  animation: scrollTwo 1s ease-in-out infinite;
+}
+
+@keyframes scrollOne {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 65%;
+  }
+}
+
+@keyframes scrollTwo {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 75%;
+  }
+}
+
+/* --- About --- */
+
+#about {
+  padding: 100px 10%;
+  word-break: normal;
+  text-align: justify;
+}
+
+.aboutImg {
+  height: 20vh;
+  border: 1px solid white;
+}
+
+/* --- Project ---*/
+
+#project {
+  margin: 0 10%;
+}
+
+.projectContainer {
+  background-color: #242424;
+  cursor: pointer;
+}
+
+.projectContainer:hover {
+  border: 2px solid rgb(255, 211, 0);
+}
+
+.projectContainer:nth-child(even) {
+  direction: rtl; /* So that the text box goes below the img when shrink size */
+}
+
+.boxsize {
+  /* gives the photo containers a position. else width from .overlay will go to the width of .row */
+  position: relative;
+}
+
+#project img {
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #242424;
+  opacity: 0.8;
+}
+
+.overlay:hover {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* --- Contact --- */
+
+#contact {
+  padding: 100px 10%;
+}
+
+#contact input,
+textarea {
+  width: min(500px, 80%);
+  margin-top: 2vh;
+  background-color: #242424;
+  border: transparent;
+  color: white;
+}
